@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import Sidebar from './SideBar';
+import TapControl from './TapControl'
 import { Row, Col, Container} from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,6 +15,7 @@ function App() {
           </div>
           <Col>
             <Row>
+              <TapControl />
             </Row>
           </Col>
         </Row>

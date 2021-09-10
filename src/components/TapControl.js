@@ -25,7 +25,7 @@ render() {
   let buttonText = null;
   if (this.state.newBeerFormVisible) {
     visibleState = <NewBeerForm onNewProductCreation={this.handleAddingNewProductToList} />
-    buttonText = "Go back to Product List, Cadet!"
+    buttonText = "Go back to the Tap list"
   } else {
     visibleState = <TapList
       productList={this.state.mainProductList.sort(dynamicSort("name"))
@@ -34,7 +34,7 @@ render() {
       addStock={this.handleAddStock}
       subtractStock={this.handleSubtractStock}
     />
-    buttonText = "Add a product, My fine Aquadet"
+    buttonText = "Add a Beer"
   }
 
   return (
@@ -45,3 +45,6 @@ render() {
   ) 
 
 }
+}
+
+export default TapControl
