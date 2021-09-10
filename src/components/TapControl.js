@@ -3,13 +3,26 @@ import TapList from "./TapList";
 import NewBeerForm from "./NewBeerForm";
 import { Button } from "react-bootstrap"
 
-class ProductControl extends React.Component {
+class TapControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       newBeerFormVisible: false,
-      mainTapList: []
+      mainTapList: [
+        {name: "Juice Gose",
+        brand: "Goose Island",
+        price: "$5.00",
+        quantity: 124,
+        abv: 4.6,
+        id: "First Test Made"},
+        {name: "Flying Sparrow",
+        brand: "Goose Island",
+        price: "$5.50",
+        quantity: 108,
+        abv: 4.8,
+        id: "Second ID MADE"},
+      ]
     }
   }
 
@@ -28,11 +41,8 @@ render() {
     buttonText = "Go back to the Tap list"
   } else {
     visibleState = <TapList
-      productList={this.state.mainTapList.sort(sortByProperty("name"))
+      tapList={this.state.mainTapList.sort(sortByProperty("name"))
       }
-      onProductSelection={this.handleChangingSelectedProduct}
-      addStock={this.handleAddStock}
-      subtractStock={this.handleSubtractStock}
     />
     buttonText = "Add a Beer"
   }
