@@ -113,7 +113,7 @@ render() {
     visibleState = <BeerDetail
       beer={this.state.selectedBeer}
       deleteBeer={this.handleDeletingBeer}
-      // editBeer={this.handleSwitchToEdit}
+      editBeer={this.handleSwitchToEdit}
       />
       buttonText = "Go back to Tap List"
   } else if (this.state.newBeerFormVisible) {

@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import EditBeer from "/EditBeer"
 import { Button, Row, Col } from "react-bootstrap"
 
 function BeerDetail(props) {
@@ -11,12 +12,12 @@ function BeerDetail(props) {
       <p>{beer.brand}</p>
       <p>{beer.quantity} Pints left</p>
       <Row>
-        {/* <Col>
+        <Col>
           <Button
             className="btn-warning"
             onClick={() => props.editBeer(beer.id)}
           > Edit</Button>
-        </Col> */}
+        </Col>
         <Col>
           <Button
             className="btn-danger"
