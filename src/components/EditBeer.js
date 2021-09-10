@@ -9,7 +9,7 @@ function EditBeer(props) {
       {
         name: event.target.name.value,
         brand: event.target.brand.value,
-        quantity: 124,
+        quantity: props.quantity,
         price: event.target.price.value,
         abv: event.target.abv.value,
         id: props.id
