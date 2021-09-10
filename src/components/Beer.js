@@ -9,10 +9,20 @@ export default function Product(props) {
     quantity: props.quantity, 
     id: props.id,
     abv: props.abv }
-    
+    let buttonDelete = ( <Button
+      type="submit"
+      variant="warning"
+      className="m-3"
+      onClick={() => props.deleteEmpty(props.id)}
+    >
+      Delete Empty
+    </Button> )
+    let deleteBool = false
     let subtract = "Subtract 1"
+
     if (beer.quantity === 0) {
       subtract = "Keg Empty"
+      deleteBool = true
     }
 
   return (
@@ -45,6 +55,7 @@ export default function Product(props) {
             >
               {subtract}
             </Button>
+            { deleteBool ? buttonDelete : null}
           </Card.Body>
         </Card>
       </div>

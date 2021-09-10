@@ -15,7 +15,7 @@ class TapControl extends React.Component {
         {name: "Juice Gose",
         brand: "Goose Island",
         price: 5.00,
-        quantity: 124,
+        quantity: 5,
         abv: 4.6,
         id: "First Test Made"},
         {name: "Flying Sparrow",
@@ -144,6 +144,7 @@ render() {
       onBeerSelection={this.handleChangingSelectedBeer}
       addPint={this.handleAddPint}
       subtractPint={this.handleSubtractPint}
+      deleteBeer={this.handleDeletingBeer}
     />
     buttonText = "Add a Beer"
   }
