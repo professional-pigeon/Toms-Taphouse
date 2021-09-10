@@ -2,6 +2,7 @@ import React from 'react';
 import TapList from "./TapList";
 import NewBeerForm from "./NewBeerForm";
 import BeerDetail from "./BeerDetail"
+import EditBeer from "./EditBeer"
 import { Button } from "react-bootstrap"
 
 class TapControl extends React.Component {
@@ -104,12 +105,29 @@ handleClick = () => {
     })
   }
 
+  handleEditing = (beerEdit) => {
+    const editedMainTapList = this.state.mainTapList
+      .filter(beer => beer.id !== this.state.selectedBeer["id"])
+      .concat(beerEdit)
+    this.setState({
+      mainTapList: editedMainTapList,
+      selectedBeer: null,
+      edit: false
+    })
+  }
+
 
 
 render() {
   let visibleState = null;
   let buttonText = null;
-  if (this.state.selectedBeer != null) {
+  if (this.state.edit) {
+    visibleState = <EditBeer
+      beer={this.state.selectedBeer}
+      editProductFunction={this.handleEditing}
+    />
+    buttonText = "Return to Tap List"
+  } else if (this.state.selectedBeer != null) {
     visibleState = <BeerDetail
       beer={this.state.selectedBeer}
       deleteBeer={this.handleDeletingBeer}

@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import EditBeer from "/EditBeer"
 import { Button, Row, Col } from "react-bootstrap"
 
 function BeerDetail(props) {
