@@ -10,10 +10,10 @@ function NewBeerForm(props) {
     props.onNewBeerCreation(
       {
         name: event.target.name.value,
-        brand: event.target.description.value,
+        brand: event.target.brand.value,
         quantity: 124,
-        price: event.target.quantity.value,
-        abv: event.target.quantity.value,
+        price: event.target.price.value,
+        abv: event.target.abv.value,
         id: v4()
       }
     )
