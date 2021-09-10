@@ -1,6 +1,6 @@
   
 import React from "react";
-import Otter from './otter.jpg'
+import Bar from './bar.jpg'
 
 function Photo() {
   const photoStyles = {
@@ -8,7 +8,7 @@ function Photo() {
   }
   return (
     <React.Fragment>
-      <img src={Otter} alt="Otter holding a beer" style={photoStyles} />
+      <img src={Bar} alt="Otter holding a beer" style={photoStyles} />
     </React.Fragment>
   );
 }
