@@ -11,8 +11,8 @@ export default function Product(props) {
     abv: props.abv }
     let buttonDelete = ( <Button
       type="submit"
-      variant="warning"
-      className="m-3"
+      variant="danger"
+      className="m-2"
       onClick={() => props.deleteEmpty(props.id)}
     >
       Delete Empty
@@ -42,7 +42,7 @@ export default function Product(props) {
             <Button
               type="submit"
               variant="success"
-              className="m-3"
+              className={ deleteBool ? "m-2" : "m-3"}
               onClick={() => props.pintPlus(beer)}
             >
               Add 1
@@ -50,7 +50,7 @@ export default function Product(props) {
             <Button
               type="submit"
               variant="warning"
-              className="m-3"
+              className={ deleteBool ? "m-2" : "m-3"}
               onClick={() => props.pintMinus(beer)}
             >
               {subtract}
