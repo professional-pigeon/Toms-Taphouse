@@ -106,6 +106,7 @@ render() {
       // deleteBeer={this.handleDeletingProductFromList}
       // editBeer={this.handleSwitchToEdit}
       />
+      buttonText = "Go back to Tap List"
   } else if (this.state.newBeerFormVisible) {
     visibleState = <NewBeerForm onNewBeerCreation={this.handleAddingNewBeer} 
     beerBool={false}/>
@@ -126,8 +127,7 @@ render() {
       <Button onClick={this.handleClick} variant="dark" className="mt-3 p-5">{buttonText}</Button>
     </React.Fragment>
   ) 
-
-}
+  }
 }
 
 export default TapControl
