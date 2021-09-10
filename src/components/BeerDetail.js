@@ -17,12 +17,12 @@ function BeerDetail(props) {
             onClick={() => props.editBeer(beer.id)}
           > Edit</Button>
         </Col> */}
-        {/* <Col>
+        <Col>
           <Button
             className="btn-danger"
-            onClick={() => props.deleteProduct(beer.id)}
+            onClick={() => props.deleteBeer(beer.id)}
           > Delete</Button>
-        </Col> */}
+        </Col>
       </Row>
     </React.Fragment >
   )

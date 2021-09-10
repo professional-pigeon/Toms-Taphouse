@@ -95,6 +95,15 @@ handleClick = () => {
     });
   }
 
+  handleDeletingBeer = (id) => {
+    const editedMainTapList = this.state.mainTapList
+      .filter(beer => beer.id !== id)
+    this.setState({
+      mainTapList: editedMainTapList,
+      selectedProduct: null
+    })
+  }
+
 
 
 render() {
@@ -103,7 +112,7 @@ render() {
   if (this.state.selectedBeer != null) {
     visibleState = <BeerDetail
       beer={this.state.selectedBeer}
-      // deleteBeer={this.handleDeletingProductFromList}
+      deleteBeer={this.handleDeletingBeer}
       // editBeer={this.handleSwitchToEdit}
       />
       buttonText = "Go back to Tap List"
