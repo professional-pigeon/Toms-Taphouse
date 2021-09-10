@@ -64,7 +64,8 @@ function BeerForm(props) {
 
 
 BeerForm.propTypes = {
-  onNewbeerCreation: PropTypes.func //inherited from parent. Function from controller handleaddingnewbeertolist
+  onNewbeerCreation: PropTypes.func,
+  beerBool: PropTypes.bool,
+  beer: PropTypes.object
 }
-
 export default BeerForm

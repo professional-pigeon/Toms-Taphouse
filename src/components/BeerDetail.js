@@ -30,7 +30,8 @@ function BeerDetail(props) {
 
 BeerDetail.propTypes = {
   beer: PropTypes.object,
-  // deleteBeer: PropTypes.func
+  deleteBeer: PropTypes.func,
+  editBeer: PropTypes.func
 };
 
 export default BeerDetail

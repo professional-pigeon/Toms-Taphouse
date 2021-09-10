@@ -9,7 +9,9 @@ export default function Product(props) {
     quantity: props.quantity, 
     id: props.id,
     abv: props.abv }
-    let buttonDelete = ( <Button
+
+  let buttonDelete = ( 
+    <Button
       type="submit"
       variant="danger"
       className="m-2"
@@ -17,13 +19,14 @@ export default function Product(props) {
     >
       Delete Empty
     </Button> )
-    let deleteBool = false
-    let subtract = "Subtract 1"
+  
+  let deleteBool = false
+  let subtract = "Subtract 1"
 
-    if (beer.quantity === 0) {
-      subtract = "Keg Empty"
-      deleteBool = true
-    }
+  if (beer.quantity === 0) {
+    subtract = "Keg Empty"
+    deleteBool = true
+  }
 
   return (
     <React.Fragment>
@@ -71,6 +74,8 @@ Product.propTypes = {
   abv: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
   id: PropTypes.string,
-  whenProductClicked: PropTypes.func,
-  stockPlus: PropTypes.func
+  whenBeerClicked: PropTypes.func,
+  pintPlus: PropTypes.func,
+  pintMinus: PropTypes.func,
+  deleteEmpty: PropTypes.func
 }

@@ -31,7 +31,8 @@ function EditBeer(props) {
 }
 
 EditBeer.propTypes = {
-  editBeerFunction: PropTypes.func //inherited from parent. Function from controller handleaddingnewproducttolist
+  editBeerFunction: PropTypes.func,
+  beer: PropTypes.object
 }
 
 export default EditBeer
