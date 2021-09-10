@@ -100,7 +100,7 @@ handleClick = () => {
       .filter(beer => beer.id !== id)
     this.setState({
       mainTapList: editedMainTapList,
-      selectedProduct: null
+      selectedBeer: null
     })
   }
 
