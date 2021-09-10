@@ -10,7 +10,7 @@ function TapList(props) {
           name={beer.name}
           brand={beer.brand}
           price={beer.price}
-          KegVolume={beer.quantity}
+          quantity={beer.quantity}
           abv={beer.abv}
           id={beer.id}
           key={beer.id} />

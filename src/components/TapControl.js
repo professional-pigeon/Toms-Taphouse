@@ -24,11 +24,11 @@ render() {
   let visibleState = null;
   let buttonText = null;
   if (this.state.newBeerFormVisible) {
-    visibleState = <NewBeerForm onNewProductCreation={this.handleAddingNewProductToList} />
+    visibleState = <NewBeerForm onNewBeerCreation={this.handleAddingNewBeer} />
     buttonText = "Go back to the Tap list"
   } else {
     visibleState = <TapList
-      productList={this.state.mainProductList.sort(dynamicSort("name"))
+      productList={this.state.mainTapList.sort(sortByProperty("name"))
       }
       onProductSelection={this.handleChangingSelectedProduct}
       addStock={this.handleAddStock}
@@ -48,3 +48,12 @@ render() {
 }
 
 export default TapControl
+
+const sortByProperty = (property) => {
+  let sortOrder = 1;
+  return function (a, b) {
+    const result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+    return result * sortOrder;
+  }
+}
+
