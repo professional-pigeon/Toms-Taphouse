@@ -13,14 +13,20 @@ function TapList(props) {
           quantity={beer.quantity}
           abv={beer.abv}
           id={beer.id}
-          key={beer.id} />
+          key={beer.id} 
+          whenBeerClicked={props.onBeerSelection}
+          pintPlus={props.addPint}
+          pintMinus={props.subtractPint}/>
       )}
     </React.Fragment>
   );
 }
 
 TapList.propTypes = {
-  tapList: PropTypes.array
+  tapList: PropTypes.array,
+  onBeerSelection: PropTypes.func,
+  addPint: PropTypes.func,
+  subtractPint: PropTypes.func
 }
 
 export default TapList

@@ -4,32 +4,36 @@ import { Button, Card } from "react-bootstrap"
 
 export default function Product(props) {
   const beer = { name: props.name, 
-    brand: props.beer,
+    brand: props.brand,
     price: props.price, 
     quantity: props.quantity, 
     id: props.id,
     abv: props.abv }
+    
+    let subtract = "Subtract 1"
+    if (beer.quantity === 0) {
+      subtract = "Keg Empty"
+    }
 
   return (
     <React.Fragment>
       <div className="col-6 mb-3">
         <Card>
           <Card.Body>
-            <Card.Title>{props.name}</Card.Title>
+            <Card.Title onClick={() => props.whenBeerClicked(props.id)}>{props.name}</Card.Title>
             <Card.Text>
-              {props.brand}
+              By {props.brand}
             </Card.Text>
             <ul>
               <li>Quantity: {props.quantity} pints left</li>
-              <li>ID: {props.id}</li>
-              <li>price: {props.price}</li>
+              <li>price: ${props.price}</li>
               <li>ABV: {props.abv}%</li>
             </ul>
-            {/* <Button
+            <Button
               type="submit"
               variant="success"
               className="m-3"
-              // onClick={() => props.stockPlus(prod)}
+              onClick={() => props.pintPlus(beer)}
             >
               Add 1
             </Button>
@@ -37,10 +41,10 @@ export default function Product(props) {
               type="submit"
               variant="warning"
               className="m-3"
-              // onClick={() => props.stockMinus(prod)}
+              onClick={() => props.pintMinus(beer)}
             >
-              {subtract} */}
-            {/* </Button> */}
+              {subtract}
+            </Button>
           </Card.Body>
         </Card>
       </div>
@@ -51,8 +55,10 @@ export default function Product(props) {
 
 Product.propTypes = {
   name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  quantity: PropTypes.number.isRequired,
+  brand: PropTypes.string.isRequired,
+  quantity: PropTypes.number,
+  abv: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
   id: PropTypes.string,
   whenProductClicked: PropTypes.func,
   stockPlus: PropTypes.func

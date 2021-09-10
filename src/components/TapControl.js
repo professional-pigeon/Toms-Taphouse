@@ -22,15 +22,23 @@ class TapControl extends React.Component {
         quantity: 108,
         abv: 4.8,
         id: "Second ID MADE"},
-      ]
+      ],
+      selectedBeer: null
     }
   }
 
 
 handleClick = () => {
+  if (this.state.selectedBeer != null) {
+    this.setState({
+      newBeerFormVisible: false,
+      selectedBeer: null,
+    })
+  } else {
     this.setState(prevState => ({
       newBeerFormVisible: !prevState.newBeerFormVisible
-    }))
+      }))
+    }
   }
 
   handleAddingNewBeer = (newBeer) => {
@@ -47,6 +55,37 @@ handleClick = () => {
     }
   }
 
+  handleChangingSelectedBeer = (id) => {
+    const selectedBeer = this.state.mainTapList.filter(beer => beer.id === id)[0];
+    this.setState({ selectedBeer: selectedBeer});
+  }
+
+  handleAddPint = (beerToEdit) => {
+    let updatedBeer = beerToEdit
+    updatedBeer.quantity++
+    const editedMainTapList = this.state.mainTapList
+      .filter(beer=> beer.id !== beerToEdit.id)
+      .concat(updatedBeer)
+    this.setState({
+      mainTapList: editedMainTapList
+    })
+  }
+
+  handleSubtractPint = (beerToEdit) => {
+    let updatedBeer = beerToEdit
+    updatedBeer.quantity--
+    if (updatedBeer.quantity < 0) {
+      updatedBeer.quantity = 0
+    }
+    const editedMainTapList = this.state.mainTapList
+      .filter(beer=> beer.id !== beerToEdit.id)
+      .concat(updatedBeer)
+    this.setState({
+      mainTapList: editedMainTapList
+    })
+  }
+
+
 
 render() {
   let visibleState = null;
@@ -57,8 +96,10 @@ render() {
     buttonText = "Go back to the Tap list"
   } else {
     visibleState = <TapList
-      tapList={this.state.mainTapList.sort(sortByProperty("name"))
-      }
+      tapList={this.state.mainTapList.sort(sortByProperty("name"))}
+      onBeerSelection={this.handleChangingSelectedBeer}
+      addPint={this.handleAddPint}
+      subtractPint={this.handleSubtractPint}
     />
     buttonText = "Add a Beer"
   }
