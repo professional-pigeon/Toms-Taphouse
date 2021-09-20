@@ -23,6 +23,10 @@
 
 This is a website designed to be a Taphouse using React.
 
+## Diagram of project
+
+* [Click here to go Draw.io](https://drive.google.com/file/d/1GabZwZyLXOuHtu-rwMJWIMeUVG3-GaVa/view?usp=sharing)
+
 ## Setup/Installation Requirements
 
 
@@ -46,4 +50,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Kyle.KayPerez@gmail.com
 
-https://drive.google.com/file/d/1GabZwZyLXOuHtu-rwMJWIMeUVG3-GaVa/view?usp=sharing
